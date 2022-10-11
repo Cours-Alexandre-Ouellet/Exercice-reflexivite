@@ -1,4 +1,9 @@
-﻿using UsineVelo.Velos.Double;
+﻿/*
+ * Inspiré de Côté J. (2022) AbstractFactory (Version 1.0) [Code source].
+ * 
+ * Alexandre Ouellet - 2022
+ */
+using UsineVelo.Velos;
 
 namespace UsineVelo.Usines
 {
@@ -8,9 +13,14 @@ namespace UsineVelo.Usines
         {           
         }
 
-        public override IDouble GetRecetteDoubleSupsension()
+        public override MonteurVeloAbstrait GetRecetteDoubleSupsension()
         {
-            return new DoubleDevinci();     
+            return new MonteurDoubleDevinci();     
+        }
+
+        public override MonteurVeloAbstrait GetRecetteSimpleSuspension()
+        {
+            return new MonteurSimpleDevinci();
         }
     }
 }
